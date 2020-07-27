@@ -56,6 +56,7 @@ import {
   PieChartPlugin,
   TimePivotChartPlugin,
 } from '@superset-ui/legacy-preset-chart-nvd3';
+import { JsChartPlugin } from '@superset-ui/plugin-chart-js';
 import { LegacyBoxPlotChartPlugin } from '@superset-ui/preset-chart-xy';
 import { DeckGLChartPreset } from '@superset-ui/legacy-preset-chart-deckgl';
 
@@ -107,6 +108,7 @@ export default class MainPreset extends Preset {
         new TreemapChartPlugin().configure({ key: 'treemap' }),
         new WordCloudChartPlugin().configure({ key: 'word_cloud' }),
         new WorldMapChartPlugin().configure({ key: 'world_map' }),
+        new JsChartPlugin().configure({ key: 'js_chart' }),
       ],
     });
   }
