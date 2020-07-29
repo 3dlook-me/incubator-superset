@@ -17,7 +17,6 @@
  * under the License.
  */
 import { t } from '@superset-ui/translation';
-import { validateNonEmpty } from '@superset-ui/validator';
 import { ControlPanelConfig } from '@superset-ui/chart-controls';
 
 const config: ControlPanelConfig = {
@@ -53,18 +52,9 @@ const config: ControlPanelConfig = {
   // Time series charts need to override the `druidTimeSeries` and `sqlaTimeSeries`
   // sections to add the time grain dropdown.
   sectionOverrides: {
-    druidTimeSeries: {
-      controlSetRows: [['granularity', 'druid_time_origin'], ['time_range']],
-    },
-    sqlaTimeSeries: {
-      controlSetRows: [['granularity_sqla', 'time_grain_sqla'], ['time_range']],
-    },
+
   },
   controlOverrides: {
-    series: {
-      validators: [validateNonEmpty],
-      clearable: false,
-    },
     row_limit: {
       default: 100,
     },
